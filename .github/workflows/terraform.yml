@@ -56,6 +56,7 @@ jobs:
       uses: trstringer/manual-approval@v1
       with:
         secret: ${{ secrets.GITHUB_TOKEN }}
+        approvers: chandra-organization1126
         minimum-approvals: 1
         issue-title: "approve the above terraform plan"
         issue-body: "Please approve or deny the terraform plan"
