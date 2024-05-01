@@ -56,7 +56,6 @@ jobs:
       uses: trstringer/manual-approval@v1
       with:
         secret: ${{ secrets.GITHUB_TOKEN }}
-        approvers: soundandtechsolution 
         minimum-approvals: 1
         issue-title: "approve the above terraform plan"
         issue-body: "Please approve or deny the terraform plan"
