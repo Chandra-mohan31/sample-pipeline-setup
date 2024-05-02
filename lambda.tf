@@ -1,5 +1,5 @@
 resource "aws_iam_role" "iam_for_lambda" {
-  name = "iam_for_lambda"
+  name = "iam_for_lambda-cm"
 
   assume_role_policy = <<EOF
 {
@@ -20,7 +20,7 @@ EOF
 
 resource "aws_lambda_function" "test_lambda" {
   filename      = "sample-node-app.zip"
-  function_name = "sample_node_app"
+  function_name = "sample_node_app-cm"
   role          = aws_iam_role.iam_for_lambda.arn
   handler       = "exports.index"
 
