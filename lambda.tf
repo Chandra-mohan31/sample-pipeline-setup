@@ -22,7 +22,7 @@ resource "aws_lambda_function" "test_lambda" {
   filename      = "sample-node-app.zip"
   function_name = "sample_node_app-cm"
   role          = aws_iam_role.iam_for_lambda.arn
-  handler       = "exports.index"
+  handler       = "index.js"
 
   source_code_hash = filebase64sha256("sample-node-app.zip")
 
