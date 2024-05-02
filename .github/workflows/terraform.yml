@@ -51,9 +51,18 @@ jobs:
       id: plan
       run: terraform plan -out saved_plan
 
+    - name: Approve terraform plan
+      uses: macnev2013/manual-approval@latest
+      with:
+        secret: ${{ github.TOKEN }}
+        approvers: Chandra-mohan31
+        minimum-approvals: 1
+        approval-wait: 600
+        issue-title: 'Manual Approval'
+        
     - name: Terraform Apply
       id: apply
-      run: terraform apply
+      run: terraform apply "saved_plan"
   
     # - uses: trstringer/manual-approval@v1
     #   with:
