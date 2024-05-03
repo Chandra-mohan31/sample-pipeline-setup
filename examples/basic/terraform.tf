@@ -3,7 +3,7 @@ terraform {
   backend "s3" {
     key    = "terraform.tfstate"
     region = "us-east-1"
-    bucket = "sample-pipeline-terratest-bct-cm "
+    bucket = "sample-pipeline-terratest-bct-cm"
 
     dynamodb_table = "tf-state-lock-terratest-cm"
     encrypt        = true

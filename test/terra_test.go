@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TerraTestFunc(t *testing.T) {
+func TestBasic(t *testing.T) {
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
 		TerraformDir: "../examples/basic",
 	})

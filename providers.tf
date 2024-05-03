@@ -1,7 +1,7 @@
 provider "aws" {
   default_tags {
     tags = {
-      env       = "dev"
+      env       = var.env
       createdBy = "chandramohan"
       repo      = "sample-lambda-app-cm"
     }
