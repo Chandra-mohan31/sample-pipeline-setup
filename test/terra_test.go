@@ -7,7 +7,7 @@ import (
 
 func TerraTestFunc(t *testing.T) {
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir: "../",
+		TerraformDir: "../examples/basic",
 	})
 
 	terraform.InitAndPlan(t, terraformOptions)
