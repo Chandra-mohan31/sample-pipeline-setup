@@ -18,6 +18,7 @@ resource "aws_iam_role" "iam_for_lambda" {
 EOF
 }
 
+
 resource "aws_lambda_function" "test_lambda" {
   filename      = "sample-node-app.zip"
   function_name = var.function_name
