@@ -42,13 +42,14 @@ jobs:
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
-      run: terraform init \
-        -backend-config="bucket=sample-poc-pipeline-dev" \
-        -backend-config="key=terraform.tfstate" \
-        -backend-config="dynamodb_table=sample-pipeline-poc-lock-table-dev" \
-        -backend=true \
-        -get=true \
-        -input=false
+      run: |
+        terraform init \
+          -backend-config="bucket=sample-poc-pipeline-dev" \
+          -backend-config="key=terraform.tfstate" \
+          -backend-config="dynamodb_table=sample-pipeline-poc-lock-table-dev" \
+          -backend=true \
+          -get=true \
+          -input=false
 
 
     # Checks that all Terraform configuration files adhere to a canonical format
@@ -98,7 +99,6 @@ jobs:
     - name: Terraform Init
       run: |
         terraform init \
-        -migrate-state \
         -backend-config="bucket=sample-pipeline-poc-cm" \
         -backend-config="key=terraform.tfstate" \
         -backend-config="dynamodb_table=tf-state-lock-dynamodb-cm" \
@@ -118,7 +118,6 @@ jobs:
     - name: Terraform Apply
       id: apply
       run: terraform apply "saved_plan"
-
 
   terratest:
     name: 'Terra test'
