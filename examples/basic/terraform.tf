@@ -1,13 +1,13 @@
 terraform {
   required_version = ">= 1.6.0"
-  backend "s3" {
-    key    = "terraform.tfstate"
-    region = "us-east-1"
-    bucket = "sample-pipeline-terratest-bct-cm"
+  # backend "s3" {
+  #   key    = "terraform.tfstate"
+  #   region = "us-east-1"
+  #   bucket = "sample-pipeline-terratest-bct-cm"
 
-    dynamodb_table = "tf-state-lock-terratest-cm"
-    encrypt        = true
-  }
+  #   dynamodb_table = "tf-state-lock-terratest-cm"
+  #   encrypt        = true
+  # }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
