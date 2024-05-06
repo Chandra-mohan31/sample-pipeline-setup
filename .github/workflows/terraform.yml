@@ -98,7 +98,6 @@ jobs:
     - name: Terraform Init
       run: |
         terraform init \
-        -migrate-state \
         -backend-config="bucket=sample-pipeline-poc-cm" \
         -backend-config="key=terraform.tfstate" \
         -backend-config="dynamodb_table=tf-state-lock-dynamodb-cm" \
